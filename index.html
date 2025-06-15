@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MediAssist</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: url('https://i.pinimg.com/736x/09/00/de/0900de14a9a5eaa0dda8571e6b34677e.jpg') no-repeat center center fixed;
+      background-size: cover;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .container {
+      display: flex;
+      background-color: rgba(255, 255, 255, 0.85);
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+      overflow: hidden;
+      max-width: 900px;
+      width: 95%;
+    }
+
+    .left {
+      flex: 1;
+      background-color: #00c9a7;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 30px;
+    }
+
+    .left h1 {
+      color: white;
+      font-size: 2.5rem;
+      text-align: center;
+      /* removed cursor:pointer and onclick */
+    }
+
+    .right {
+      flex: 1;
+      padding: 50px 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .right button {
+      width: 60%;
+      padding: 15px;
+      font-size: 16px;
+      border: none;
+      border-radius: 12px;
+      background-color: #00c9a7;
+      color: white;
+      cursor: pointer;
+      transition: 0.3s ease;
+      font-weight: 600;
+    }
+
+    .right button:hover {
+      background-color: #019c84;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        height: auto;
+      }
+
+      .left, .right {
+        flex: unset;
+        width: 100%;
+        padding: 40px 20px;
+      }
+
+      .right button {
+        width: 80%;
+      }
+
+      .left h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="left">
+      <h1>MediAssist</h1>
+    </div>
+
+    <div class="right">
+      <button onclick="location.href='login.html'">Login</button>
+      <button onclick="location.href='registration.html'">Register</button>
+    </div>
+  </div>
+</body>
+</html>

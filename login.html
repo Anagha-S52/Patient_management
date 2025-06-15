@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login - MediAssist</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: url('https://i.pinimg.com/736x/09/00/de/0900de14a9a5eaa0dda8571e6b34677e.jpg') no-repeat center center fixed;
+      background-size: cover;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+      position: relative;
+    }
+    .form-container {
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+      max-width: 400px;
+      width: 100%;
+    }
+    h2 {
+      margin-bottom: 25px;
+      color: #00c9a7;
+      text-align: center;
+    }
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: #333;
+    }
+    input, select {
+      width: 100%;
+      padding: 12px 15px;
+      margin-bottom: 20px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+    button.submit-btn {
+      width: 100%;
+      background-color: #00c9a7;
+      color: white;
+      padding: 15px;
+      border: none;
+      border-radius: 12px;
+      font-size: 18px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    button.submit-btn:hover {
+      background-color: #019c84;
+    }
+    #homeBtn {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background-color: #00c9a7;
+      border: none;
+      color: white;
+      padding: 10px 16px;
+      border-radius: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+      transition: background-color 0.3s ease;
+      z-index: 1000;
+    }
+    #homeBtn:hover {
+      background-color: #019c84;
+    }
+  </style>
+</head>
+<body>
+
+  <button id="homeBtn">Home</button>
+
+  <div class="form-container">
+    <h2>Login</h2>
+    <form id="loginForm">
+      <label for="username">Username or Email:</label>
+      <input type="text" id="username" name="username" placeholder="Enter username or email" required />
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" placeholder="Enter password" required />
+
+      <label for="role">Select Role:</label>
+      <select id="role" name="role" required>
+        <option value="" disabled selected>Select Role</option>
+        <option value="patient">Patient</option>
+        <option value="doctor">Doctor</option>
+      </select>
+
+      <button type="submit" class="submit-btn">Login</button>
+    </form>
+  </div>
+
+  <script>
+    // Home button redirect
+    document.getElementById('homeBtn').addEventListener('click', () => {
+      window.location.href = 'index.html';
+    });
+
+    // Login logic
+    const loginForm = document.getElementById('loginForm');
+    loginForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const role = document.getElementById('role').value;
+
+      // Redirect based on selected role
+      if (role === 'patient') {
+        window.location.href = 'patient_dashboard.html'; // ✅ Goes to patient dashboard
+      } else if (role === 'doctor') {
+        window.location.href = 'doctor_dashboard.html'; // (You can add this page later)
+      } else {
+        alert('Please select a role!');
+      }
+
+      // Reset form
+      loginForm.reset();
+    });
+  </script>
+
+</body>
+</html>

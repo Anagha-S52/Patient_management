@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Symptom Checker - MediAssist</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: url('https://i.pinimg.com/736x/09/00/de/0900de14a9a5eaa0dda8571e6b34677e.jpg') no-repeat center center fixed;
+      background-size: cover;
+      min-height: 100vh;
+      padding: 50px 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      background-color: rgba(255, 255, 255, 0.92);
+      border-radius: 20px;
+      padding: 40px;
+      max-width: 700px;
+      width: 100%;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+      text-align: center;
+    }
+
+    h2 {
+      color: #00c9a7;
+      margin-bottom: 30px;
+      font-size: 2rem;
+    }
+
+    form {
+      text-align: left;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      font-weight: 600;
+      cursor: pointer;
+      display: block;
+      margin-bottom: 8px;
+      color: #333;
+      font-size: 16px;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 12px 15px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      font-size: 16px;
+      resize: vertical;
+      box-sizing: border-box;
+    }
+
+    input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      cursor: pointer;
+    }
+
+    .symptom-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+
+    .symptom-item {
+      flex: 1 1 45%;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 16px;
+      color: #333;
+    }
+
+    .submit-btn {
+      margin-top: 25px;
+      background-color: #00c9a7;
+      color: white;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 12px;
+      font-size: 18px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      display: block;
+      width: 100%;
+    }
+
+    .submit-btn:hover {
+      background-color: #019c84;
+    }
+
+    /* Container for top right buttons */
+    .top-right-buttons {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      display: flex;
+      gap: 12px;
+      z-index: 1000;
+    }
+
+    .top-right-buttons button {
+      background-color: #00c9a7;
+      border: none;
+      color: white;
+      padding: 10px 16px;
+      border-radius: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+      transition: background-color 0.3s ease;
+      font-family: 'Poppins', sans-serif;
+      font-size: 14px;
+    }
+
+    .top-right-buttons button:hover {
+      background-color: #019c84;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="top-right-buttons">
+    <button id="homeBtn">Home</button>
+    <button id="backBtn">Back to Dashboard</button>
+  </div>
+
+  <div class="container">
+    <h2>Symptom Checker</h2>
+
+    <form id="symptomForm">
+      <!-- Patient Info -->
+      <div class="form-group">
+        <label for="patientName">Name <span style="color:red">*</span></label>
+        <input type="text" id="patientName" name="patientName" placeholder="Enter your full name" required />
+      </div>
+
+      <div class="form-group">
+        <label for="patientAge">Age <span style="color:red">*</span></label>
+        <input type="number" id="patientAge" name="patientAge" placeholder="Enter your age" min="0" max="150" required />
+      </div>
+
+      <div class="form-group">
+        <label for="patientSex">Sex <span style="color:red">*</span></label>
+        <select id="patientSex" name="patientSex" required>
+          <option value="" disabled selected>Select your sex</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+          <option value="other">Other</option>
+          <option value="prefer_not_to_say">Prefer not to say</option>
+        </select>
+      </div>
+
+      <!-- Symptoms -->
+      <div class="symptom-group">
+        <div class="symptom-item">
+          <input type="checkbox" id="fever" name="symptoms" value="fever" />
+          <label for="fever">Fever</label>
+        </div>
+        <div class="symptom-item">
+          <input type="checkbox" id="cough" name="symptoms" value="cough" />
+          <label for="cough">Cough</label>
+        </div>
+        <div class="symptom-item">
+          <input type="checkbox" id="headache" name="symptoms" value="headache" />
+          <label for="headache">Headache</label>
+        </div>
+        <div class="symptom-item">
+          <input type="checkbox" id="fatigue" name="symptoms" value="fatigue" />
+          <label for="fatigue">Fatigue</label>
+        </div>
+        <div class="symptom-item">
+          <input type="checkbox" id="sore_throat" name="symptoms" value="sore_throat" />
+          <label for="sore_throat">Sore Throat</label>
+        </div>
+        <div class="symptom-item">
+          <input type="checkbox" id="runny_nose" name="symptoms" value="runny_nose" />
+          <label for="runny_nose">Runny Nose</label>
+        </div>
+        <div class="symptom-item">
+          <input type="checkbox" id="body_ache" name="symptoms" value="body_ache" />
+          <label for="body_ache">Body Ache</label>
+        </div>
+        <div class="symptom-item">
+          <input type="checkbox" id="nausea" name="symptoms" value="nausea" />
+          <label for="nausea">Nausea</label>
+        </div>
+        <div class="symptom-item">
+          <input type="checkbox" id="shortness_of_breath" name="symptoms" value="shortness_of_breath" />
+          <label for="shortness_of_breath">Shortness of Breath</label>
+        </div>
+        <div class="symptom-item">
+          <input type="checkbox" id="chest_pain" name="symptoms" value="chest_pain" />
+          <label for="chest_pain">Chest Pain</label>
+        </div>
+      </div>
+
+      <label for="description">Additional Information (optional):</label>
+      <textarea id="description" name="description" placeholder="Describe your symptoms or duration..."></textarea>
+
+      <button type="submit" class="submit-btn">Submit</button>
+    </form>
+  </div>
+
+  <script>
+    // Home button
+    document.getElementById('homeBtn').addEventListener('click', () => {
+      window.location.href = 'index.html';
+    });
+
+    // Back to Dashboard button
+    document.getElementById('backBtn').addEventListener('click', () => {
+      window.location.href = 'patient_dashboard.html';
+    });
+
+    // Form submission with validation
+    document.getElementById('symptomForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const name = document.getElementById('patientName').value.trim();
+      const age = document.getElementById('patientAge').value.trim();
+      const sex = document.getElementById('patientSex').value;
+
+      if (!name) {
+        alert('Please enter your name.');
+        return;
+      }
+      if (!age || isNaN(age) || age < 0 || age > 150) {
+        alert('Please enter a valid age between 0 and 150.');
+        return;
+      }
+      if (!sex) {
+        alert('Please select your sex.');
+        return;
+      }
+
+      // Get checked symptoms
+      const checkedSymptoms = [...document.querySelectorAll('input[name="symptoms"]:checked')]
+        .map(cb => cb.value);
+
+      if (checkedSymptoms.length === 0) {
+        alert('Please select at least one symptom.');
+        return;
+      }
+
+      // Collect additional info
+      const additionalInfo = document.getElementById('description').value.trim();
+
+      // You can now send this data to your backend or API
+      // For demo, showing a summary alert:
+
+      alert(
+        `Thank you, ${name}!\n` +
+        `Age: ${age}\n` +
+        `Sex: ${sex.charAt(0).toUpperCase() + sex.slice(1).replace(/_/g, ' ')}\n` +
+        `Symptoms: ${checkedSymptoms.join(', ')}\n` +
+        (additionalInfo ? `Additional info: ${additionalInfo}` : '') +
+        `\n\nA doctor will review your symptoms soon.`
+      );
+
+      // Optional: Reset form after submission
+      // e.target.reset();
+    });
+  </script>
+</body>
+</html>

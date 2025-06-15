@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>All Doctors & Specialisation - MediAssist</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 20px;
+      background: url('https://i.pinimg.com/736x/09/00/de/0900de14a9a5eaa0dda8571e6b34677e.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #333;
+    }
+
+    h2 {
+      text-align: center;
+      color: #00c9a7;
+      margin-bottom: 30px;
+      margin-top: 60px; /* to avoid overlap with fixed buttons */
+    }
+
+    table {
+      width: 90%;
+      max-width: 900px;
+      margin: 0 auto 40px;
+      border-collapse: collapse;
+      background-color: rgba(255, 255, 255, 0.95);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    th, td {
+      padding: 15px 20px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+      font-weight: 500;
+      font-size: 16px;
+    }
+
+    th {
+      background-color: #00c9a7;
+      color: white;
+      font-weight: 700;
+    }
+
+    tr:hover {
+      background-color: #f0fdfd;
+      cursor: default;
+    }
+
+    /* Fixed button container at top right */
+    .top-right-buttons {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      display: flex;
+      gap: 15px;
+      z-index: 1000;
+    }
+
+    .top-right-buttons button {
+      padding: 10px 18px;
+      background-color: #00c9a7;
+      border: none;
+      border-radius: 10px;
+      color: white;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+      font-family: 'Poppins', sans-serif;
+      font-size: 14px;
+      transition: background-color 0.3s ease;
+    }
+
+    .top-right-buttons button:hover {
+      background-color: #019c84;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="top-right-buttons">
+    <button onclick="location.href='index.html'">Home</button>
+    <button onclick="location.href='patient_dashboard.html'">Back to Dashboard</button>
+  </div>
+
+  <h2>All Doctors & Specialisation</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Doctor Name</th>
+        <th>Specialisation</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Dr. Aanya Sharma</td><td>Cardiologist</td></tr>
+      <tr><td>Dr. Rahul Mehra</td><td>Dermatologist</td></tr>
+      <tr><td>Dr. Sneha Iyer</td><td>Neurologist</td></tr>
+      <tr><td>Dr. Arjun Patel</td><td>General Physician</td></tr>
+      <tr><td>Dr. Kavya Reddy</td><td>Pediatrician</td></tr>
+      <tr><td>Dr. Nikhil Jain</td><td>Orthopedic</td></tr>
+      <tr><td>Dr. Priya Nair</td><td>Gynecologist</td></tr>
+      <tr><td>Dr. Raj Malhotra</td><td>ENT Specialist</td></tr>
+      <tr><td>Dr. Meera Das</td><td>Dentist</td></tr>
+      <tr><td>Dr. Vikram Rao</td><td>Psychiatrist</td></tr>
+      <tr><td>Dr. Ishita Kapoor</td><td>Oncologist</td></tr>
+      <tr><td>Dr. Aditya Roy</td><td>Nephrologist</td></tr>
+      <tr><td>Dr. Ritu Shah</td><td>Endocrinologist</td></tr>
+      <tr><td>Dr. Saurabh Verma</td><td>Ophthalmologist</td></tr>
+      <tr><td>Dr. Tanvi Pillai</td><td>Rheumatologist</td></tr>
+      <tr><td>Dr. Mohit Singh</td><td>Pulmonologist</td></tr>
+      <tr><td>Dr. Anjali Ghosh</td><td>Immunologist</td></tr>
+      <tr><td>Dr. Dhruv Joshi</td><td>Radiologist</td></tr>
+      <tr><td>Dr. Rhea Fernandes</td><td>Hematologist</td></tr>
+      <tr><td>Dr. Karan Bhatt</td><td>Pathologist</td></tr>
+      <tr><td>Dr. Neha Chopra</td><td>Gastroenterologist</td></tr>
+      <tr><td>Dr. Varun Kulkarni</td><td>Urologist</td></tr>
+      <tr><td>Dr. Suhana Rizvi</td><td>Surgeon</td></tr>
+      <tr><td>Dr. Rakesh Das</td><td>Allergist</td></tr>
+      <tr><td>Dr. Isha Menon</td><td>Family Medicine</td></tr>
+    </tbody>
+  </table>
+
+</body>
+</html>

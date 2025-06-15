@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Patients with Symptoms - MediAssist</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: url('https://i.pinimg.com/736x/09/00/de/0900de14a9a5eaa0dda8571e6b34677e.jpg') no-repeat center center fixed;
+      background-size: cover;
+      padding: 40px 20px;
+      min-height: 100vh;
+      color: #222;
+    }
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background: rgba(255, 255, 255, 0.92);
+      border-radius: 15px;
+      padding: 30px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+    }
+    h2 {
+      color: #00c9a7;
+      margin-bottom: 25px;
+      text-align: center;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      padding: 12px 15px;
+      border-bottom: 1px solid #ccc;
+      text-align: left;
+    }
+    th {
+      background-color: #00c9a7;
+      color: white;
+      font-weight: 600;
+    }
+    .back-btn {
+      margin-top: 25px;
+      background-color: #00c9a7;
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 12px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+      display: block;
+      width: max-content;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .back-btn:hover {
+      background-color: #019c84;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>Patients with Entered Symptoms</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th><th>Age</th><th>Sex</th><th>Symptoms</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Ravi Kumar</td><td>32</td><td>Male</td><td>Fever, Cough</td></tr>
+        <tr><td>Priya Sharma</td><td>28</td><td>Female</td><td>Headache, Fatigue</td></tr>
+        <tr><td>Amit Singh</td><td>45</td><td>Male</td><td>Chest Pain, Shortness of Breath</td></tr>
+        <tr><td>Sneha Reddy</td><td>30</td><td>Female</td><td>Sore Throat, Runny Nose</td></tr>
+      </tbody>
+    </table>
+
+    <button class="back-btn" onclick="window.location.href='doctor_dashboard.html'">Back to Dashboard</button>
+  </div>
+
+</body>
+</html>
